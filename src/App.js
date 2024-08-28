@@ -2,22 +2,6 @@ import './App.css';
 import Editor from './Editor';
 import Preview from './Preview';
 import { useState } from 'react';
-import { marked } from 'marked';
-import Prism from 'prismjs';
-
-//Marked library
-marked.use({
-  breaks: true,
-  highlight: (code) => {
-    return Prism.highlight(code, Prism.languages.javascript, 'javascript')
-  }
-});
-
-const renderer = new marked.Renderer();
-
-renderer.link = (href, title, text) => {
-  return `<a href="${href}" target="_blank">${text}</a>`
-};
 
 function App() {
   
