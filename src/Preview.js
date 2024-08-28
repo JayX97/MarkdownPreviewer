@@ -9,9 +9,6 @@ marked.use({
     }
 });
 
-//initialize Renderer
-const renderer = new marked.Renderer();
-
 const Preview = (props) => {
     const output = props.output;
 
@@ -19,7 +16,7 @@ const Preview = (props) => {
         <div className="component" id="markdown-preview">
             <div className="component-header">Preview</div>
             <div id="preview" dangerouslySetInnerHTML={{
-                __html: marked(output, { renderer: renderer })
+                __html: marked(output)
             }}></div>
         </div>
     );
