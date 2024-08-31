@@ -5,8 +5,26 @@ import { useState } from 'react';
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const defaultText = `# Heading 1
+## Heading 2
+[Link](https://www.freecodecamp.org)
+\`<div></div>\`
+\`\`\`
+function printMessage() {
+  console.log("Hello world!");
+}
+\`\`\`
+- List item 1
+  - List item 2
+
+> Block Quote
+
+**Bold text**
+_Italic text_
+
+![Jason](https://www.shutterstock.com/shutterstock/photos/2061066161/display_1500/stock-vector-jason-voorhees-animated-cartoon-with-his-sharp-knife-halloween-2061066161.jpg)`;
   
-  const [markdown, setMarkdown] = useState("");
+  const [markdown, setMarkdown] = useState(defaultText);
 
   const handleChange = (event) => {
     const input = event.target.value;
@@ -16,7 +34,7 @@ function App() {
   return (
     <div className="wrapper">
       <div className="component-wrapper">
-        <Editor onChange={handleChange} />
+        <Editor markdown={defaultText} onChange={handleChange} />
         <Preview output={markdown} />
       </div>
       <div className="footer">
