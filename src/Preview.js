@@ -1,5 +1,6 @@
 import { marked } from 'marked';
 import Prism from 'prismjs';
+import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 //Marked library
 marked.use({
@@ -13,9 +14,9 @@ const Preview = (props) => {
     const output = props.output;
 
     return (
-        <div className="component" id="markdown-preview">
+        <div className="component card" id="markdown-preview" style={{border: "1px solid black"}}>
             <div className="component-header">Preview</div>
-            <div id="preview" dangerouslySetInnerHTML={{
+            <div className="card-body" id="preview" dangerouslySetInnerHTML={{
                 __html: marked(output)
             }}></div>
         </div>
